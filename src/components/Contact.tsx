@@ -90,7 +90,7 @@ export default function Contact() {
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Email Us</h3>
                   <p className="text-white/80">
-                    pilzeexotic@gmail.cm
+                    pilzeexotic@gmail.com
                   </p>
                 </div>
               </div>
