@@ -15,6 +15,9 @@ const workSans = Work_Sans({
 export const metadata: Metadata = {
   title: "Pilze - Functional Drinks",
   description: "Elevate your daily ritual with Pilze functional beverages.",
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({

@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 mb-12">
           <div className="space-y-4">
             <Link href="/" className="text-2xl font-bold tracking-tighter">
-              <img src="/logo.png" alt="Logo" className="h-8 w-auto"/>
+              <img src="/images/bg_remove_logo.png" alt="Logo" className="h-16 w-auto"/>
             </Link>
             <p className="text-white/70 text-sm leading-relaxed max-w-xs">
               Functional beverages for the modern mind and body. Crafted with nature, backed by science.
