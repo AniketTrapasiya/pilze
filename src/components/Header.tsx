@@ -8,7 +8,7 @@ export default function Header() {
           href="/"
           className="text-2xl font-bold tracking-tighter text-primary"
         >
-          PILZE
+          <img src="/logo.png" alt="Logo" className="h-8 w-auto"/>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
