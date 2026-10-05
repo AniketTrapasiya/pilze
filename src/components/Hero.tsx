@@ -7,86 +7,86 @@ import { TextAnimeStyle2 } from "./TextAnime";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#EFECE1] pt-14 sm:pt-20 lg:pt-24 pb-0 min-h-[720px] sm:min-h-[800px] lg:min-h-[860px] flex flex-col justify-between">
-      {/* 1. Background Watermark Pilz Graphic (WordPress: hero-1-bg) */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-25 z-0 select-none">
+    <section className="relative overflow-hidden bg-[#FAF8F5] pt-12 sm:pt-16 lg:pt-20 pb-0 min-h-[760px] sm:min-h-[820px] lg:min-h-[880px] flex flex-col justify-between">
+      {/* 1. Background Watermark Pilz Graphic (WordPress: .hero-1 .hero-1-bg bottom: 0, left: 50%, translate(-50%)) */}
+      <div className="hero-1-bg opacity-30 select-none pointer-events-none">
         <Image
-          src="/images/hero-watermark.png"
+          src="/images/hero-1-bg.png"
           alt=""
-          width={1100}
-          height={600}
-          className="object-contain scale-110 sm:scale-125"
+          width={1300}
+          height={650}
+          className="w-full max-w-[1300px] h-auto object-contain"
           priority
         />
       </div>
 
-      {/* 2. Shape Mockup 1: Top Right Spice (WordPress: top: 0%, right: 5%, movingX) */}
-      <div className="shape-mockup top-2 sm:top-4 right-[5%] hidden md:block movingX z-10">
+      {/* 2. Shape Mockup 1: Top Right Spice (WordPress: data-top="0%" data-right="5%" class="shape-mockup d-none d-xl-block movingX") */}
+      <div className="shape-mockup top-0 right-[5%] hidden xl:block movingX z-10">
         <Image
-          src="/images/hero-shape-spice.png"
+          src="/images/hero-1-1.png"
           alt=""
-          width={76}
-          height={76}
-          className="object-contain opacity-85"
+          width={90}
+          height={90}
+          className="object-contain"
         />
       </div>
 
-      {/* 3. Shape Mockup 2: Top Left Botanical Leaf (WordPress: top: 14%, left: 1%, rotate) */}
-      <div className="shape-mockup top-[14%] left-[1%] hidden lg:block z-10">
+      {/* 3. Shape Mockup 2: Top Left Botanical Leaf (WordPress: data-top="14%" data-left="1%" class="shape-mockup d-none d-xxl-block gsap-scroll-rotate") */}
+      <div className="shape-mockup top-[14%] sm:top-[18%] lg:top-[21%] left-[0.7%] sm:left-[1%] hidden lg:block z-10 w-[200px] md:w-[295px] xl:w-[380px]">
         <div className="animate-[floatLeaf1_6s_ease-in-out_infinite]">
           <Image
-            src="/images/hero-shape-leaf-left.png"
+            src="/images/hero-1-2.png"
             alt=""
-            width={130}
-            height={130}
-            className="object-contain drop-shadow-md"
+            width={380}
+            height={380}
+            className="w-full h-auto object-contain drop-shadow-md"
           />
         </div>
       </div>
 
-      {/* 4. Shape Mockup 3: Top Right Floating Mini Can (WordPress: top: 13%, right: 2%, jump-reverse) */}
-      <div className="shape-mockup top-[13%] right-[2%] hidden lg:block jump-reverse z-10">
+      {/* 4. Shape Mockup 3: Top Right Floating Mini Can (WordPress: data-top="13%" data-right="2%" class="shape-mockup d-none d-xxl-block jump-reverse") */}
+      <div className="shape-mockup top-[11%] lg:top-[13%] right-[2%] hidden lg:block jump-reverse z-10 w-[135px] xl:w-[200px]">
         <Image
-          src="/images/hero-shape-mini-can.png"
+          src="/images/hero-1-3.png"
           alt=""
-          width={80}
-          height={140}
-          className="object-contain drop-shadow-lg"
+          width={200}
+          height={320}
+          className="w-full h-auto object-contain drop-shadow-lg"
         />
       </div>
 
-      {/* 5. Shape Mockup 4: Bottom Left Herb (WordPress: bottom: 0%, left: 5%, movingX) */}
-      <div className="shape-mockup bottom-0 left-[2%] sm:left-[5%] hidden sm:block movingX z-20">
+      {/* 5. Shape Mockup 4: Bottom Left Herb (WordPress: data-bottom="0%" data-left="5%" class="shape-mockup d-none d-xxl-block movingX") */}
+      <div className="shape-mockup bottom-0 left-[2%] sm:left-[5%] hidden md:block movingX z-20">
         <Image
-          src="/images/hero-shape-herb-left.png"
+          src="/images/hero-1-4.png"
           alt=""
-          width={120}
-          height={120}
+          width={130}
+          height={130}
           className="object-contain drop-shadow-md"
         />
       </div>
 
-      {/* 6. Shape Mockup 5: Bottom Right Leaf (WordPress: bottom: 0%, right: 0%, jump) */}
-      <div className="shape-mockup bottom-0 right-0 hidden sm:block jump z-20">
+      {/* 6. Shape Mockup 5: Bottom Right Leaf (WordPress: data-bottom="0%" data-right="0%" class="shape-mockup d-none d-xxl-block jump") */}
+      <div className="shape-mockup bottom-0 right-0 hidden sm:block jump z-20 w-[100px] md:w-[130px] xl:w-[150px]">
         <Image
-          src="/images/hero-shape-leaf-right.png"
+          src="/images/hero-1-5.png"
           alt=""
           width={150}
           height={150}
-          className="object-contain drop-shadow-md"
+          className="w-full h-auto object-contain drop-shadow-md"
         />
       </div>
 
-      {/* 7. Floating Rotating Circular Badge (WordPress: hero-img-shape-1 -> right: 16%, top: 36%) */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.6 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-        className="absolute top-[32%] sm:top-[34%] lg:top-[35%] right-[4%] sm:right-[10%] lg:right-[15%] z-30 cursor-pointer group"
-      >
-        <div className="relative w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center">
-          {/* Outer Green Ring with 55s smooth rotation (WordPress spin-smoth) */}
-          <div className="absolute inset-0 rounded-full bg-[#388E64] shadow-xl spin-smoth">
+      {/* 7. Floating Rotating Circular Badge (WordPress: .hero-img-shape-1 right: 20%; top: 55%; z-index: 7) */}
+      <div className="absolute top-[48%] sm:top-[50%] lg:top-[52%] xl:top-[54%] right-[5%] sm:right-[12%] lg:right-[18%] xl:right-[20%] z-30 cursor-pointer group select-none pointer-events-auto">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.6 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          className="relative w-40 h-40 sm:w-48 sm:h-48 lg:w-52 lg:h-52 flex items-center justify-center"
+        >
+          {/* Rotating Text Ring (WordPress: .logo-animation with 55s continuous smooth rotation) */}
+          <div className="absolute inset-0 rounded-full spin-smoth flex items-center justify-center">
             <svg
               className="w-full h-full"
               viewBox="0 0 200 200"
@@ -94,57 +94,57 @@ export default function Hero() {
             >
               <defs>
                 <path
-                  id="textRingPath"
+                  id="heroBadgePath"
                   d="M 100, 100 m -70, 0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0"
                 />
               </defs>
               <text
-                fontSize="13"
-                fontWeight="700"
-                fill="#ffffff"
+                fontSize="13.5"
+                fontWeight="800"
+                fill="#388E64"
                 letterSpacing="3.5"
-                className="uppercase font-barlow tracking-[0.25em]"
+                className="uppercase font-barlow tracking-[0.26em]"
               >
-                <textPath href="#textRingPath" startOffset="0%">
+                <textPath href="#heroBadgePath" startOffset="0%">
                   more focus, more energy, and more clarity •&nbsp;
                 </textPath>
               </text>
             </svg>
           </div>
 
-          {/* Inner White Circle with Red CTA Text */}
-          <div className="w-22 h-22 sm:w-26 sm:h-26 rounded-full bg-white z-10 flex flex-col items-center justify-center p-3 text-center shadow-md group-hover:scale-110 transition-transform duration-300">
-            <span className="font-barlow font-black text-xs sm:text-sm uppercase text-[#E51A1A] leading-tight tracking-wider">
+          {/* Inner White Button (WordPress: .logo-icon width: 165px; height: 165px; background: white; border: 1px solid #fff) */}
+          <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full bg-white border border-gray-100 shadow-xl z-10 flex flex-col items-center justify-center p-3 text-center transition-transform duration-300 group-hover:scale-105">
+            <span className="font-barlow font-black text-xs sm:text-sm lg:text-base uppercase text-[#E51A1A] leading-tight tracking-wider">
               START <br />
               THINKING <br />
               BETTER
             </span>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
 
-      {/* 8. Hero Headline & Subtitle */}
+      {/* 8. Hero Headline & Subtitle (WordPress: .hero-style1 padding: 75px 0 0; text-align: center) */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
-        {/* Subtitle with gsap-scale-down-fade effect */}
+        {/* Subtitle with gsap-scale-down-fade effect (y: -500 to 0) */}
         <motion.p
           initial={{ opacity: 0, y: -40, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="font-barlow text-[#E51A1A] font-extrabold text-sm sm:text-base md:text-xl tracking-widest uppercase mb-3"
+          className="font-barlow text-[#E51A1A] font-extrabold text-sm sm:text-base md:text-xl lg:text-2xl tracking-widest uppercase mb-2 sm:mb-3"
         >
           FOR PEOPLE WHO DEMAND MORE FROM THEIR MIND
         </motion.p>
 
-        {/* Title with WordPress text-anime-style-2 letter stagger */}
+        {/* Title with WordPress text-anime-style-2 character stagger */}
         <TextAnimeStyle2
           text="YOUR BRAIN HAS BEEN ASKING FOR THIS."
           as="h1"
-          className="font-barlow font-black text-4xl sm:text-6xl md:text-7xl lg:text-[88px] tracking-tight uppercase text-[#111111] leading-[0.93] max-w-5xl mx-auto"
+          className="font-barlow font-black text-4xl sm:text-6xl md:text-7xl lg:text-[88px] xl:text-[96px] tracking-tight uppercase text-[#111111] leading-[0.93] max-w-5xl mx-auto"
         />
       </div>
 
       {/* 9. Hero Visual Scene: Ingredients Platter, Center Man with Can */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 mt-8 sm:mt-12 flex-1 flex items-end justify-center min-h-[380px] sm:min-h-[460px] lg:min-h-[520px]">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 mt-6 sm:mt-10 flex-1 flex items-end justify-center min-h-[400px] sm:min-h-[480px] lg:min-h-[540px]">
         {/* Left Elements: Fresh Ingredients Platter */}
         <div className="absolute left-2 sm:left-6 lg:left-10 bottom-0 z-20 hidden sm:flex flex-col items-center">
           <motion.div
@@ -164,7 +164,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Center Element: Man holding Can forward (WordPress: hero-img1 gsap-scale-up-fade) */}
+        {/* Center Element: Man holding Can forward (WordPress: .hero-img1 .gsap-scale-up-fade) */}
         <motion.div
           initial={{ opacity: 0, y: 70, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -184,3 +184,4 @@ export default function Hero() {
     </section>
   );
 }
+

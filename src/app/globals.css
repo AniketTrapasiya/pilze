@@ -304,7 +304,45 @@ body {
 .shape-mockup {
   position: absolute;
   pointer-events: none;
-  z-index: 10;
+  z-index: 2;
+}
+
+.hero-1-bg {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1400px;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+@media (min-width: 1922px) {
+  .hero-1-bg {
+    width: 64%;
+  }
+}
+
+@media (max-width: 1199px) {
+  .hero-1-bg {
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero-1-bg {
+    width: 108%;
+  }
+}
+
+@media (max-width: 630px) {
+  .hero-1-bg {
+    width: 128%;
+  }
 }
 
 /* Custom Scrollbar */
