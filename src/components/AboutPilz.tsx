@@ -22,19 +22,17 @@ export default function AboutPilz() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Column: 3D Rotating Can GIF with Purple Radial Ambient Glow */}
+          {/* Left Column: 3D Rotating Can GIF matching WordPress (.img-box1 .img1) */}
           <div className="flex justify-center items-center relative">
-            {/* Glow backdrop with pulse */}
-            <div className="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-[#8A43C8]/15 blur-3xl -z-10 pointer-events-none glow-purple" />
-
-            <div className="relative w-64 sm:w-80 md:w-96 flex items-center justify-center hover:scale-105 transition-transform duration-500">
+            <div className="relative w-full max-w-[480px] sm:max-w-[540px] md:max-w-[580px] lg:max-w-[620px] flex items-center justify-center">
               <Image
-                src="/images/can-3d-spin.gif"
-                alt="3D Rotating Pilz Focus Can"
-                width={360}
-                height={520}
+                src="/images/download.gif"
+                alt="Pilz Functional Can"
+                width={620}
+                height={620}
                 unoptimized
-                className="w-full h-auto object-contain drop-shadow-2xl mix-blend-multiply"
+                className="w-full h-auto object-contain transition-transform duration-500 hover:scale-105"
+                priority
               />
             </div>
           </div>
