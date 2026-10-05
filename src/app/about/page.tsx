@@ -1,15 +1,17 @@
 import Header from "@/components/Header";
-import AboutFull from "@/components/AboutFull";
+import About from "@/components/About";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[#FAF8F5]">
       <Header />
       <main className="grow">
-        <AboutFull />
+        <About />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
