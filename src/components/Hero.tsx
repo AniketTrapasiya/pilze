@@ -77,16 +77,16 @@ export default function Hero() {
         />
       </div>
 
-      {/* 7. Floating Rotating Circular Badge (WordPress: .hero-img-shape-1 right: 20%; top: 55%; z-index: 7) */}
-      <div className="absolute top-[50%] sm:top-[48%] lg:top-[50%] xl:top-[52%] right-[3%] sm:right-[10%] lg:right-[16%] xl:right-[18%] z-30 cursor-pointer group select-none pointer-events-auto">
+      {/* 7. Floating Rotating Circular Badge (WordPress: .hero-img-shape-1) */}
+      <div className="absolute top-[48%] sm:top-[44%] lg:top-[46%] xl:top-[48%] right-[5%] sm:right-[12%] lg:right-[18%] xl:right-[22%] z-30 cursor-pointer group select-none pointer-events-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.6 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-42 md:h-42 lg:w-46 lg:h-46 flex items-center justify-center"
+          className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 flex items-center justify-center"
         >
-          {/* Rotating Text Ring (WordPress: .logo-animation with 55s continuous smooth rotation) */}
-          <div className="absolute inset-0 rounded-full spin-smoth flex items-center justify-center">
+          {/* Green Ring with Rotating Text */}
+          <div className="absolute inset-0 rounded-full bg-[#3F9065] shadow-lg spin-smoth flex items-center justify-center p-2">
             <svg
               className="w-full h-full"
               viewBox="0 0 200 200"
@@ -95,15 +95,15 @@ export default function Hero() {
               <defs>
                 <path
                   id="heroBadgePath"
-                  d="M 100, 100 m -70, 0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0"
+                  d="M 100, 100 m -72, 0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0"
                 />
               </defs>
               <text
-                fontSize="13.5"
-                fontWeight="800"
-                fill="#388E64"
-                letterSpacing="3.5"
-                className="uppercase font-barlow tracking-[0.26em]"
+                fontSize="12.5"
+                fontWeight="700"
+                fill="#ffffff"
+                letterSpacing="3"
+                className="uppercase font-barlow tracking-[0.22em]"
               >
                 <textPath href="#heroBadgePath" startOffset="0%">
                   more focus, more energy, and more clarity •&nbsp;
@@ -112,9 +112,9 @@ export default function Hero() {
             </svg>
           </div>
 
-          {/* Inner White Button (WordPress: .logo-icon width: 165px; height: 165px; background: white; border: 1px solid #fff) */}
-          <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full bg-white border border-gray-100 shadow-xl z-10 flex flex-col items-center justify-center p-1.5 sm:p-2.5 text-center transition-transform duration-300 group-hover:scale-105">
-            <span className="font-barlow font-black text-[9px] sm:text-xs md:text-sm lg:text-[15px] uppercase text-[#E51A1A] leading-tight tracking-wider">
+          {/* Inner White Button */}
+          <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full bg-white shadow-md z-10 flex flex-col items-center justify-center p-2 text-center transition-transform duration-300 group-hover:scale-105">
+            <span className="font-barlow font-black text-[11px] sm:text-xs md:text-sm lg:text-[15px] uppercase text-[#E51A1A] leading-tight tracking-wider">
               START <br />
               THINKING <br />
               BETTER
@@ -143,27 +143,8 @@ export default function Hero() {
         />
       </div>
 
-      {/* 9. Hero Visual Scene: Ingredients Platter, Center Man with Can */}
+      {/* 9. Hero Visual Scene: Center Man with Can */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 mt-4 sm:mt-6 flex-1 flex items-end justify-center min-h-[340px] sm:min-h-[420px] lg:min-h-[480px]">
-        {/* Left Elements: Fresh Ingredients Platter */}
-        <div className="absolute left-2 sm:left-4 lg:left-8 bottom-0 z-20 hidden sm:flex flex-col items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -70, rotate: -4 }}
-            animate={{ opacity: 1, x: 0, rotate: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="movingX"
-          >
-            <Image
-              src="/images/hero-ingredients.png"
-              alt="Raw Functional Ingredients - Lion's Mane, Reishi, Cinnamon, Herbs"
-              width={320}
-              height={320}
-              className="w-40 sm:w-52 md:w-64 lg:w-[290px] object-contain drop-shadow-xl"
-              priority
-            />
-          </motion.div>
-        </div>
-
         {/* Center Element: Man holding Can forward (WordPress: .hero-img1 .gsap-scale-up-fade) */}
         <motion.div
           initial={{ opacity: 0, y: 70, scale: 0.95 }}
