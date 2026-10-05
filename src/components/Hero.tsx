@@ -78,12 +78,12 @@ export default function Hero() {
       </div>
 
       {/* 7. Floating Rotating Circular Badge (WordPress: .hero-img-shape-1 right: 20%; top: 55%; z-index: 7) */}
-      <div className="absolute top-[48%] sm:top-[50%] lg:top-[52%] xl:top-[54%] right-[5%] sm:right-[12%] lg:right-[18%] xl:right-[20%] z-30 cursor-pointer group select-none pointer-events-auto">
+      <div className="absolute top-[52%] sm:top-[50%] lg:top-[52%] xl:top-[54%] right-[3%] sm:right-[10%] lg:right-[18%] xl:right-[20%] z-30 cursor-pointer group select-none pointer-events-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.6 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          className="relative w-40 h-40 sm:w-48 sm:h-48 lg:w-52 lg:h-52 flex items-center justify-center"
+          className="relative w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-52 lg:h-52 flex items-center justify-center"
         >
           {/* Rotating Text Ring (WordPress: .logo-animation with 55s continuous smooth rotation) */}
           <div className="absolute inset-0 rounded-full spin-smoth flex items-center justify-center">
@@ -113,8 +113,8 @@ export default function Hero() {
           </div>
 
           {/* Inner White Button (WordPress: .logo-icon width: 165px; height: 165px; background: white; border: 1px solid #fff) */}
-          <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full bg-white border border-gray-100 shadow-xl z-10 flex flex-col items-center justify-center p-3 text-center transition-transform duration-300 group-hover:scale-105">
-            <span className="font-barlow font-black text-xs sm:text-sm lg:text-base uppercase text-[#E51A1A] leading-tight tracking-wider">
+          <div className="w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full bg-white border border-gray-100 shadow-xl z-10 flex flex-col items-center justify-center p-1.5 sm:p-3 text-center transition-transform duration-300 group-hover:scale-105">
+            <span className="font-barlow font-black text-[9px] sm:text-xs md:text-sm lg:text-base uppercase text-[#E51A1A] leading-tight tracking-wider">
               START <br />
               THINKING <br />
               BETTER
@@ -130,7 +130,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -40, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="font-barlow text-[#E51A1A] font-extrabold text-sm sm:text-base md:text-xl lg:text-2xl tracking-widest uppercase mb-2 sm:mb-3"
+          className="font-barlow text-[#E51A1A] font-extrabold text-xs sm:text-base md:text-xl lg:text-2xl tracking-widest uppercase mb-2 sm:mb-3"
         >
           FOR PEOPLE WHO DEMAND MORE FROM THEIR MIND
         </motion.p>
@@ -139,7 +139,7 @@ export default function Hero() {
         <TextAnimeStyle2
           text="YOUR BRAIN HAS BEEN ASKING FOR THIS."
           as="h1"
-          className="font-barlow font-black text-4xl sm:text-6xl md:text-7xl lg:text-[88px] xl:text-[96px] tracking-tight uppercase text-[#111111] leading-[0.93] max-w-5xl mx-auto"
+          className="font-barlow font-black text-3xl sm:text-5xl md:text-7xl lg:text-[88px] xl:text-[96px] tracking-tight uppercase text-[#111111] leading-[0.95] sm:leading-[0.93] max-w-5xl mx-auto"
         />
       </div>
 

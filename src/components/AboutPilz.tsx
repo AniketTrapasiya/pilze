@@ -53,7 +53,7 @@ export default function AboutPilz() {
               text="EVERY SIP WORKS SMARTER"
               highlightText="WORKS SMARTER"
               as="h2"
-              className="font-barlow font-black text-4xl sm:text-5xl md:text-6xl tracking-tight uppercase text-black leading-none mb-6"
+              className="font-barlow font-black text-3xl sm:text-5xl md:text-6xl tracking-tight uppercase text-black leading-none mb-6"
             />
 
             <p className="text-gray-600 font-sans text-base sm:text-lg leading-relaxed mb-8">

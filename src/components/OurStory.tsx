@@ -26,7 +26,7 @@ export default function OurStory() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="relative min-h-[420px] sm:min-h-[560px] lg:min-h-full w-full overflow-hidden"
+          className="relative min-h-[300px] sm:min-h-[460px] lg:min-h-full w-full overflow-hidden"
         >
           <Image
             src="/images/our-story-main.jpg"
@@ -38,13 +38,13 @@ export default function OurStory() {
         </motion.div>
 
         {/* Right Column: Story Copy & Thumbnails */}
-        <div className="p-8 sm:p-12 md:p-16 lg:p-20 flex flex-col justify-center">
+        <div className="p-6 sm:p-10 md:p-16 lg:p-20 flex flex-col justify-center">
           <div className="max-w-xl">
             {/* Header with WordPress text-anime-style-2 */}
             <TextAnimeStyle2
               text="OUR STORY"
               as="h2"
-              className="font-barlow font-black text-4xl sm:text-5xl md:text-6xl tracking-tight uppercase text-white mb-2"
+              className="font-barlow font-black text-3xl sm:text-5xl md:text-6xl tracking-tight uppercase text-white mb-2"
             />
 
             {/* Gold/Yellow Decorative Divider with img-anime-style-1 */}

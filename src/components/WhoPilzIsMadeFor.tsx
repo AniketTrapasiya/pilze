@@ -83,7 +83,7 @@ export default function WhoPilzIsMadeFor() {
           text="WHO PILZ IS MADE FOR"
           highlightText="MADE FOR"
           as="h2"
-          className="font-barlow font-black text-4xl sm:text-5xl md:text-6xl tracking-tight uppercase text-black"
+          className="font-barlow font-black text-3xl sm:text-5xl md:text-6xl tracking-tight uppercase text-black"
         />
 
         {/* Decorative Divider with img-anime-style-1 */}

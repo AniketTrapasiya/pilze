@@ -64,20 +64,40 @@ export function TextAnimeStyle2({
             highlightText &&
             part.toLowerCase() === highlightText.toLowerCase();
 
+          // Split part into words to preserve word boundaries on mobile
+          const words = part.split(/(\s+)/);
+
           return (
             <span
               key={partIndex}
               className={isHighlight ? highlightClassName : undefined}
             >
-              {part.split("").map((char, charIndex) => (
-                <motion.span
-                  key={`${partIndex}-${charIndex}`}
-                  variants={letterVariants}
-                  className="inline-block"
-                >
-                  {char === " " ? "\u00A0" : char}
-                </motion.span>
-              ))}
+              {words.map((word, wordIndex) => {
+                if (/\s+/.test(word)) {
+                  return (
+                    <span key={`space-${wordIndex}`} className="inline">
+                      {" "}
+                    </span>
+                  );
+                }
+
+                return (
+                  <span
+                    key={`word-${wordIndex}`}
+                    className="inline-block whitespace-nowrap"
+                  >
+                    {word.split("").map((char, charIndex) => (
+                      <motion.span
+                        key={`${wordIndex}-${charIndex}`}
+                        variants={letterVariants}
+                        className="inline-block"
+                      >
+                        {char}
+                      </motion.span>
+                    ))}
+                  </span>
+                );
+              })}
             </span>
           );
         })}

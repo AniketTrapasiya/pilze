@@ -74,7 +74,7 @@ export default function IngredientsMarquee() {
           WHAT’S INSIDE PILZ
         </p>
 
-        <h2 className="font-barlow font-black text-4xl sm:text-5xl md:text-6xl tracking-tight uppercase text-black">
+        <h2 className="font-barlow font-black text-3xl sm:text-5xl md:text-6xl tracking-tight uppercase text-black">
           BUILT FOR <span className="text-[#8A43C8]">PRODUCTIVE DAYS</span>
         </h2>
 
