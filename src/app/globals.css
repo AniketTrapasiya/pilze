@@ -345,6 +345,115 @@ body {
   }
 }
 
+/* Category Card (WordPress barab exact styling) */
+.category-card {
+  background-color: #F7F2E2;
+  padding: 35px 14px 40px 14px;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+  border-radius: 140px 140px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.category-card:hover {
+  background-color: #3F9065 !important;
+}
+.category-card:hover .box-title {
+  color: #ffffff !important;
+}
+.category-card:hover .box-subtitle {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+.category-card:hover .box-icon img {
+  transform: rotate(-18deg) scale(1.1);
+}
+.category-card .cat-i-bottom {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+.category-card .box-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.category-card .box-icon img {
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Team Card (WordPress barab exact arched card) */
+.team-card {
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+}
+.team-card .img-wrap {
+  position: relative;
+  background: #E9C590;
+  padding: 24px 0 0 0;
+  border-radius: 180px 180px 0 0;
+  margin-bottom: 24px;
+  overflow: hidden;
+  transition: background 0.4s ease-in-out;
+}
+.team-card:hover .img-wrap {
+  background-color: #3F9065;
+}
+.team-card .img-wrap::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to bottom, transparent, #3F9065);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  z-index: 3;
+}
+.team-card:hover .img-wrap::before {
+  height: 35%;
+  opacity: 0.9;
+}
+.team-card .team-img {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.team-card .team-1-bg-shape {
+  position: absolute;
+  left: 0;
+  top: 15px;
+  z-index: 1;
+  padding: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+}
+.team-card:hover .team-1-bg-shape {
+  opacity: 1;
+  visibility: visible;
+}
+.team-card .team-img img {
+  transition: transform 0.5s ease-in-out;
+}
+.team-card:hover .team-img img {
+  transform: scale(1.04);
+}
+
+/* Stagger offset for 1st and 4th persona card matching WordPress (.team-1-nth) */
+@media (min-width: 1200px) {
+  .team-stagger-up {
+    margin-top: -60px;
+  }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

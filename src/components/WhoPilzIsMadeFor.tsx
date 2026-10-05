@@ -10,7 +10,7 @@ interface Persona {
   title: string;
   description: string;
   image: string;
-  staggered?: boolean;
+  staggerUp?: boolean;
 }
 
 const personas: Persona[] = [
@@ -18,29 +18,29 @@ const personas: Persona[] = [
     id: "gamers",
     title: "Gamers",
     description: "Stay sharp through long sessions.",
-    image: "/images/gamer.png",
-    staggered: false,
+    image: "/images/GAMER.png",
+    staggerUp: true,
   },
   {
     id: "it-professionals",
     title: "IT Professionals",
     description: "Power through coding, calls and deadlines.",
-    image: "/images/it-pro.png",
-    staggered: true,
+    image: "/images/IT.png",
+    staggerUp: false,
   },
   {
     id: "students",
     title: "Students & Aspirants",
     description: "Support focus during study and preparation.",
-    image: "/images/student.png",
-    staggered: true,
+    image: "/images/STUDENT.png",
+    staggerUp: false,
   },
   {
     id: "creators",
     title: "Entrepreneurs & Creators",
     description: "Keep building without the usual crash.",
-    image: "/images/creator.png",
-    staggered: false,
+    image: "/images/CREATOR.png",
+    staggerUp: true,
   },
 ];
 
@@ -70,9 +70,9 @@ export default function WhoPilzIsMadeFor() {
   };
 
   return (
-    <section className="py-20 sm:py-28 bg-[#FAF8F5] relative overflow-hidden">
+    <section className="py-20 sm:py-28 lg:pt-36 lg:pb-32 bg-[#FAF8F5] relative overflow-hidden" id="personas-sec">
       {/* Header */}
-      <div className="max-w-4xl mx-auto px-4 text-center mb-14 sm:mb-20">
+      <div className="max-w-4xl mx-auto px-4 text-center mb-16 sm:mb-24">
         <TextAnimeStyle1 className="mb-2">
           <p className="font-barlow text-[#FF9924] font-extrabold text-sm sm:text-base tracking-widest uppercase">
             MADE FOR MODERN MINDS
@@ -105,49 +105,50 @@ export default function WhoPilzIsMadeFor() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 items-end"
         >
           {personas.map((persona) => (
             <motion.div
               key={persona.id}
               variants={cardVariants}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className={`flex flex-col items-center text-center group cursor-pointer ${
-                persona.staggered ? "lg:translate-y-8" : ""
+              className={`team-card cursor-pointer group ${
+                persona.staggerUp ? "team-stagger-up" : ""
               }`}
             >
-              {/* Arched Photo Container with White Background & Inner Shadow */}
-              <div className="relative w-full max-w-[270px] aspect-[3/4] rounded-t-[140px] rounded-b-3xl bg-[#FAF8F5] p-2 flex flex-col justify-end overflow-hidden shadow-xs group-hover:shadow-xl transition-all duration-300">
-                {/* Arch Background Shape Image */}
-                <div className="absolute inset-0 z-0">
+              {/* Arched Photo Container (WordPress: .img-wrap with #E9C590 background and border-radius: 180px 180px 0 0) */}
+              <div className="img-wrap shadow-sm group-hover:shadow-xl">
+                {/* Team Arch Background Outline Shape (WordPress: team-1-bg-shape.png) */}
+                <div className="team-1-bg-shape inset-0 pointer-events-none select-none flex items-center justify-center">
                   <Image
-                    src="/images/team-arch-shape.png"
+                    src="/images/team-arch-bg.png"
                     alt=""
-                    fill
-                    className="object-cover object-top opacity-60 group-hover:opacity-100 transition-opacity"
+                    width={220}
+                    height={280}
+                    className="w-full h-auto object-contain"
                   />
                 </div>
 
                 {/* Persona Cutout Photo */}
-                <div className="relative z-10 w-full h-[88%] flex items-end justify-center">
+                <div className="team-img h-[280px] sm:h-[320px] md:h-[340px] flex items-end justify-center px-2">
                   <Image
                     src={persona.image}
                     alt={persona.title}
-                    width={260}
-                    height={340}
-                    className="w-full h-full object-contain object-bottom group-hover:scale-105 transition-transform duration-500 select-none pointer-events-none"
+                    width={280}
+                    height={360}
+                    className="w-auto h-full max-h-[340px] object-contain object-bottom select-none pointer-events-none"
+                    priority
                   />
                 </div>
               </div>
 
-              {/* Title & Tagline */}
-              <div className="mt-5 w-full px-2">
-                <h3 className="font-barlow font-bold text-2xl uppercase tracking-wide text-black group-hover:text-[#388E64] transition-colors">
+              {/* Title & Tagline matching WordPress team-card-content */}
+              <div className="team-card-content text-center px-2">
+                <h3 className="box-title font-barlow font-bold text-2xl uppercase tracking-wide text-black group-hover:text-[#3F9065] transition-colors leading-snug">
                   {persona.title}
                 </h3>
-                <p className="font-sans text-sm text-gray-500 font-medium mt-1">
+                <span className="team-desig block font-sans text-sm text-[#6C6C6C] font-normal mt-1">
                   {persona.description}
-                </p>
+                </span>
               </div>
             </motion.div>
           ))}
@@ -156,3 +157,4 @@ export default function WhoPilzIsMadeFor() {
     </section>
   );
 }
+

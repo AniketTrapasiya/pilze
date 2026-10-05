@@ -50,9 +50,9 @@
 3. **Configure Project**:
    - **Framework Preset**: Next.js (should be auto-detected)
    - **Root Directory**: Leave as `./`
-   - **Build Command**: `pnpm build` (should be auto-detected)
+   - **Build Command**: `npm run build` (should be auto-detected)
    - **Output Directory**: `.next` (auto-detected)
-   - **Install Command**: `pnpm install`
+   - **Install Command**: `npm install`
 
 4. **Add Environment Variables**:
    - Click "Environment Variables"
