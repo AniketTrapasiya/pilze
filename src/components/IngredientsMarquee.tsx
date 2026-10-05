@@ -125,8 +125,17 @@ export default function IngredientsMarquee() {
             {repeatedIngredients.map((item, index) => (
               <div
                 key={`${item.id}-${index}`}
-                className="shrink-0 w-48 sm:w-52 md:w-56 category-card cursor-pointer group/card shadow-xs hover:shadow-xl"
+                className="shrink-0 w-48 sm:w-52 md:w-56 category-card cursor-pointer group/card"
               >
+                {/* Deckled brush bottom border (WordPress: .cat-i-bottom placed directly inside card) */}
+                <Image
+                  src="/images/cat-1-bottom.png"
+                  alt=""
+                  width={233}
+                  height={56}
+                  className="cat-i-bottom select-none pointer-events-none"
+                />
+
                 {/* Botanical Ingredient Image */}
                 <div className="box-icon">
                   <Image
@@ -139,23 +148,13 @@ export default function IngredientsMarquee() {
                 </div>
 
                 {/* Content */}
-                <div className="w-full pb-6 z-10 flex flex-col items-center">
+                <div className="w-full pb-4 z-10 flex flex-col items-center">
                   <h3 className="box-title font-barlow font-bold text-lg sm:text-xl text-black uppercase tracking-wide leading-tight">
                     {item.name}
                   </h3>
                   <p className="box-subtitle text-xs sm:text-sm mt-1 font-sans">
                     {item.benefit}
                   </p>
-                </div>
-
-                {/* Deckled brush bottom border (WordPress cat-1-bottom) */}
-                <div className="cat-i-bottom h-5 relative select-none">
-                  <Image
-                    src="/images/cat-1-bottom.png"
-                    alt=""
-                    fill
-                    className="object-cover object-bottom"
-                  />
                 </div>
               </div>
             ))}
