@@ -68,7 +68,7 @@ export default function IngredientsMarquee() {
   const repeatedIngredients = [...ingredients, ...ingredients, ...ingredients];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-[#FAF8F5] relative overflow-hidden" id="ingredients-sec">
+    <section className="py-16 sm:py-20 lg:py-24 bg-transparent relative overflow-hidden" id="ingredients-sec">
       {/* Section Header */}
       <div className="max-w-4xl mx-auto px-4 text-center mb-10 sm:mb-14">
         <TextAnimeStyle1 className="mb-2">
@@ -96,12 +96,12 @@ export default function IngredientsMarquee() {
         </ImgAnimeStyle1>
       </div>
 
-      {/* Marquee Carousel Container */}
-      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 group">
+      {/* Marquee Carousel Container (Wider desktop width matching WordPress container) */}
+      <div className="relative w-full max-w-[1540px] mx-auto px-4 sm:px-8 xl:px-12 group">
         {/* Navigation arrows (styled exactly like WordPress #catSlider1 arrows) */}
         <button
           onClick={() => scroll("left")}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-[#E51A1A] text-white shadow-lg flex items-center justify-center hover:bg-[#c81414] hover:scale-110 transition-all cursor-pointer"
+          className="absolute left-1 sm:left-2 xl:left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#E51A1A] text-white shadow-lg flex items-center justify-center hover:bg-[#c81414] hover:scale-110 transition-all cursor-pointer"
           aria-label="Scroll left"
         >
           <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
@@ -109,7 +109,7 @@ export default function IngredientsMarquee() {
 
         <button
           onClick={() => scroll("right")}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-[#E51A1A] text-white shadow-lg flex items-center justify-center hover:bg-[#c81414] hover:scale-110 transition-all cursor-pointer"
+          className="absolute right-1 sm:right-2 xl:right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#E51A1A] text-white shadow-lg flex items-center justify-center hover:bg-[#c81414] hover:scale-110 transition-all cursor-pointer"
           aria-label="Scroll right"
         >
           <ChevronRight className="w-5 h-5 stroke-[2.5]" />
