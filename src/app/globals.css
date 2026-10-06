@@ -355,30 +355,35 @@ body {
   position: relative;
   overflow: hidden;
 }
+.category-card.active,
 .category-card:hover {
   background-color: #3F9065 !important;
 }
+.category-card.active .box-title,
 .category-card:hover .box-title {
   color: #ffffff !important;
 }
+.category-card.active .box-subtitle,
 .category-card:hover .box-subtitle {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: #ffffff !important;
+  opacity: 0.95;
 }
+.category-card.active .box-icon img,
 .category-card:hover .box-icon img {
-  transform: rotate(-18deg) scale(1.1);
+  transform: rotate(-20deg) scale(1.05);
 }
 .category-card .cat-i-bottom {
   position: absolute;
-  bottom: -1px;
+  bottom: 0px;
   left: 0;
   width: 100%;
   height: auto;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
 .category-card .box-icon {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   margin: 0 auto 10px auto;
   display: flex;
   align-items: center;
@@ -386,6 +391,26 @@ body {
 }
 .category-card .box-icon img {
   transition: transform 0.4s ease-in-out;
+  max-height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+.category-card .box-title {
+  font-family: var(--font-barlow, "Barlow Condensed", sans-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: #121212;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  line-height: 1.15;
+  transition: color 0.2s ease;
+}
+.category-card .box-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6C6C6C;
+  line-height: 1.3;
+  transition: color 0.4s ease-in-out;
 }
 
 /* Team Card (WordPress barab exact arched card) */

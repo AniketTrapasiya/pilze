@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { TextAnimeStyle1, TextAnimeStyle2, ImgAnimeStyle1 } from "./TextAnime";
 
 interface Ingredient {
@@ -15,48 +14,50 @@ interface Ingredient {
 const ingredients: Ingredient[] = [
   {
     id: "lions-mane",
-    name: "Lion's Mane Mushroom",
+    name: "Lion’s Mane Mushroom",
     benefit: "Supports Focus & Clarity",
-    image: "/images/cat-lions-mane.png",
+    image: "/images/Lions-Mane.png",
   },
   {
     id: "reishi",
     name: "Reishi Mushroom",
     benefit: "Helps You Stay Balanced",
-    image: "/images/cat-reishi.png",
+    image: "/images/Reishi-Mushroom.png",
   },
   {
     id: "ashwagandha",
     name: "Ashwagandha",
     benefit: "Supports Stress Management",
-    image: "/images/cat-ashwagandha.png",
+    image: "/images/Ashwagandha.png",
   },
   {
     id: "l-theanine",
     name: "L-Theanine",
     benefit: "Calm, Steady Focus",
-    image: "/images/cat-l-theanine.png",
+    image: "/images/L-Theanine.png",
   },
   {
     id: "natural-caffeine",
     name: "Natural Caffeine",
     benefit: "Clean, Crash-Free Energy",
-    image: "/images/cat-natural-caffeine.png",
+    image: "/images/Natural-Caffeine.png",
   },
   {
     id: "stevia",
     name: "Stevia Natural Sweetener",
     benefit: "No Added Sugar",
-    image: "/images/cat-stevia.png",
+    image: "/images/Stevia-Sweetened.png",
   },
 ];
 
 export default function IngredientsMarquee() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  // Default active card matching the screenshot (index 2: Ashwagandha or index 3: L-Theanine)
+  const [activeId, setActiveId] = useState<string>("l-theanine");
 
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
-      const scrollAmount = 280;
+      const scrollAmount = 260;
       scrollContainerRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -88,7 +89,7 @@ export default function IngredientsMarquee() {
         <ImgAnimeStyle1 className="flex justify-center items-center mt-3">
           <Image
             src="/images/title-shape.png"
-            alt=""
+            alt="title shape"
             width={120}
             height={15}
             className="h-3.5 w-auto object-contain"
@@ -101,18 +102,30 @@ export default function IngredientsMarquee() {
         {/* Navigation arrows (styled exactly like WordPress #catSlider1 arrows) */}
         <button
           onClick={() => scroll("left")}
-          className="absolute left-1 sm:left-2 xl:left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#E51A1A] text-white shadow-lg flex items-center justify-center hover:bg-[#c81414] hover:scale-110 transition-all cursor-pointer"
-          aria-label="Scroll left"
+          className="absolute left-1 sm:left-2 xl:left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#EB1400] text-white shadow-md flex items-center justify-center hover:bg-[#121212] hover:scale-105 transition-all cursor-pointer"
+          aria-label="Previous ingredient"
         >
-          <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
+          <Image
+            src="/images/left-arrow.svg"
+            alt="Previous"
+            width={20}
+            height={20}
+            className="w-5 h-5 object-contain"
+          />
         </button>
 
         <button
           onClick={() => scroll("right")}
-          className="absolute right-1 sm:right-2 xl:right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#E51A1A] text-white shadow-lg flex items-center justify-center hover:bg-[#c81414] hover:scale-110 transition-all cursor-pointer"
-          aria-label="Scroll right"
+          className="absolute right-1 sm:right-2 xl:right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#EB1400] text-white shadow-md flex items-center justify-center hover:bg-[#121212] hover:scale-105 transition-all cursor-pointer"
+          aria-label="Next ingredient"
         >
-          <ChevronRight className="w-5 h-5 stroke-[2.5]" />
+          <Image
+            src="/images/right-arrow.svg"
+            alt="Next"
+            width={20}
+            height={20}
+            className="w-5 h-5 object-contain"
+          />
         </button>
 
         {/* Running Track */}
@@ -122,42 +135,49 @@ export default function IngredientsMarquee() {
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           <div className="animate-marquee flex items-stretch gap-5 sm:gap-6">
-            {repeatedIngredients.map((item, index) => (
-              <div
-                key={`${item.id}-${index}`}
-                className="shrink-0 w-48 sm:w-52 md:w-56 category-card cursor-pointer group/card"
-              >
-                {/* Deckled brush bottom border (WordPress: .cat-i-bottom placed directly inside card) */}
-                <Image
-                  src="/images/cat-1-bottom.png"
-                  alt=""
-                  width={233}
-                  height={56}
-                  className="cat-i-bottom select-none pointer-events-none"
-                />
-
-                {/* Botanical Ingredient Image */}
-                <div className="box-icon">
+            {repeatedIngredients.map((item, index) => {
+              const isActive = item.id === activeId;
+              return (
+                <div
+                  key={`${item.id}-${index}`}
+                  onClick={() => setActiveId(item.id)}
+                  onMouseEnter={() => setActiveId(item.id)}
+                  className={`shrink-0 w-48 sm:w-52 md:w-56 category-card cursor-pointer group/card ${
+                    isActive ? "active" : ""
+                  }`}
+                >
+                  {/* Deckled brush bottom border (WordPress: .cat-i-bottom placed directly inside card) */}
                   <Image
-                    src={item.image}
-                    alt={item.name}
-                    width={100}
-                    height={100}
-                    className="max-h-24 w-auto object-contain select-none pointer-events-none"
+                    src="/images/cat-1-bottom.png"
+                    alt=""
+                    width={233}
+                    height={56}
+                    className="cat-i-bottom select-none pointer-events-none"
                   />
-                </div>
 
-                {/* Content */}
-                <div className="w-full pb-4 z-10 flex flex-col items-center">
-                  <h3 className="box-title font-barlow font-bold text-lg sm:text-xl text-black uppercase tracking-wide leading-tight">
-                    {item.name}
-                  </h3>
-                  <p className="box-subtitle text-xs sm:text-sm mt-1 font-sans">
-                    {item.benefit}
-                  </p>
+                  {/* Botanical Ingredient Image */}
+                  <div className="box-icon">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={120}
+                      height={120}
+                      className="max-h-24 w-auto object-contain select-none pointer-events-none"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="w-full pb-4 z-10 flex flex-col items-center">
+                    <h3 className="box-title">
+                      {item.name}
+                    </h3>
+                    <p className="box-subtitle">
+                      {item.benefit}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
