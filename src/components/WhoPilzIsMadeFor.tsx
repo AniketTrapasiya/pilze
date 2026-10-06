@@ -10,7 +10,6 @@ interface Persona {
   title: string;
   description: string;
   image: string;
-  staggerUp?: boolean;
 }
 
 const personas: Persona[] = [
@@ -19,28 +18,24 @@ const personas: Persona[] = [
     title: "Gamers",
     description: "Stay sharp through long sessions.",
     image: "/images/GAMER.png",
-    staggerUp: true,
   },
   {
     id: "it-professionals",
     title: "IT Professionals",
     description: "Power through coding, calls and deadlines.",
     image: "/images/IT.png",
-    staggerUp: false,
   },
   {
     id: "students",
     title: "Students & Aspirants",
     description: "Support focus during study and preparation.",
     image: "/images/STUDENT.png",
-    staggerUp: false,
   },
   {
     id: "creators",
     title: "Entrepreneurs & Creators",
     description: "Keep building without the usual crash.",
     image: "/images/CREATOR.png",
-    staggerUp: true,
   },
 ];
 
@@ -50,29 +45,28 @@ export default function WhoPilzIsMadeFor() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.14,
+        staggerChildren: 0.12,
         delayChildren: 0.1,
       },
     },
   };
 
   const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 50, scale: 0.95 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
       transition: {
-        duration: 0.7,
+        duration: 0.6,
         ease: "easeOut",
       },
     },
   };
 
   return (
-    <section className="py-20 sm:py-28 lg:pt-36 lg:pb-32 bg-[#FAF8F5] relative overflow-hidden" id="personas-sec">
+    <section className="py-20 sm:py-28 bg-[#FAF8F5] relative overflow-hidden" id="personas-sec">
       {/* Header */}
-      <div className="max-w-4xl mx-auto px-4 text-center mb-16 sm:mb-24">
+      <div className="max-w-4xl mx-auto px-4 text-center mb-14 sm:mb-16">
         <TextAnimeStyle1 className="mb-2">
           <p className="font-barlow text-[#FF9924] font-extrabold text-sm sm:text-base tracking-widest uppercase">
             MADE FOR MODERN MINDS
@@ -98,44 +92,40 @@ export default function WhoPilzIsMadeFor() {
         </ImgAnimeStyle1>
       </div>
 
-      {/* Cards Grid with WordPress gsap-card-animation-wrapper stagger effect */}
+      {/* Cards Grid - all cards aligned evenly on the same horizontal level */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 items-end"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 items-start"
         >
           {personas.map((persona) => (
             <motion.div
               key={persona.id}
               variants={cardVariants}
-              className={`team-card cursor-pointer group ${
-                persona.staggerUp ? "team-stagger-up" : ""
-              }`}
+              className="team-card cursor-pointer group"
             >
-              {/* Arched Photo Container (WordPress: .img-wrap with #E9C590 background and border-radius: 180px 180px 0 0) */}
+              {/* Arched Photo Container matching WordPress style */}
               <div className="img-wrap shadow-sm group-hover:shadow-xl">
-                {/* Team Arch Background Outline Shape (WordPress: team-1-bg-shape.png) */}
-                <div className="team-1-bg-shape inset-0 pointer-events-none select-none flex items-center justify-center">
-                  <Image
-                    src="/images/team-arch-bg.png"
-                    alt=""
-                    width={220}
-                    height={280}
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
+                {/* Team Arch Background Outline Shape */}
+                <Image
+                  src="/images/team-1-bg-shape.png"
+                  alt=""
+                  width={220}
+                  height={280}
+                  className="team-1-bg-shape select-none pointer-events-none"
+                />
 
                 {/* Persona Cutout Photo */}
-                <div className="team-img h-[280px] sm:h-[320px] md:h-[340px] flex items-end justify-center px-2">
+                <div className="team-img flex items-end justify-center">
                   <Image
                     src={persona.image}
                     alt={persona.title}
-                    width={280}
-                    height={360}
-                    className="w-auto h-full max-h-[340px] object-contain object-bottom select-none pointer-events-none"
+                    width={292}
+                    height={350}
+                    className="w-full h-auto object-contain object-bottom select-none pointer-events-none"
                     priority
                   />
                 </div>
@@ -143,10 +133,10 @@ export default function WhoPilzIsMadeFor() {
 
               {/* Title & Tagline matching WordPress team-card-content */}
               <div className="team-card-content text-center px-2">
-                <h3 className="box-title font-barlow font-bold text-2xl uppercase tracking-wide text-black group-hover:text-[#3F9065] transition-colors leading-snug">
+                <h3 className="box-title font-barlow font-bold text-2xl sm:text-[26px] uppercase tracking-wide text-black group-hover:text-[#3F9065] transition-colors leading-snug">
                   {persona.title}
                 </h3>
-                <span className="team-desig block font-sans text-sm text-[#6C6C6C] font-normal mt-1">
+                <span className="team-desig block font-sans text-sm text-[#6C6C6C] font-normal mt-1.5">
                   {persona.description}
                 </span>
               </div>

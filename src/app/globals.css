@@ -421,11 +421,11 @@ body {
 .team-card .img-wrap {
   position: relative;
   background: #E9C590;
-  padding: 24px 0 0 0;
-  border-radius: 180px 180px 0 0;
+  padding: 30px 0 0 0;
+  border-radius: 200px 200px 0 0;
   margin-bottom: 24px;
   overflow: hidden;
-  transition: background 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 .team-card:hover .img-wrap {
   background-color: #3F9065;
@@ -443,7 +443,7 @@ body {
   z-index: 3;
 }
 .team-card:hover .img-wrap::before {
-  height: 35%;
+  height: 30%;
   opacity: 0.9;
 }
 .team-card .team-img {
@@ -452,13 +452,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  overflow: hidden;
 }
 .team-card .team-1-bg-shape {
   position: absolute;
   left: 0;
-  top: 15px;
-  z-index: 1;
-  padding: 15px;
+  top: 20px;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+  padding: 20px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s ease-in-out;
@@ -468,17 +471,28 @@ body {
   visibility: visible;
 }
 .team-card .team-img img {
-  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease-in-out;
 }
 .team-card:hover .team-img img {
   transform: scale(1.04);
 }
-
-/* Stagger offset for 1st and 4th persona card matching WordPress (.team-1-nth) */
-@media (min-width: 1200px) {
-  .team-stagger-up {
-    margin-top: -60px;
-  }
+.team-card .team-card-content .box-title {
+  font-family: var(--font-barlow, "Barlow Condensed", sans-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: #121212;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  line-height: 1.2;
+}
+.team-card .team-card-content .team-desig {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6C6C6C;
+  line-height: 1.4;
 }
 
 /* Custom Scrollbar */
